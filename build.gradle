@@ -1,0 +1,123 @@
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.4.34")
+    }
+}
+
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'java-library'
+apply plugin: 'jacoco'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+//def versionSerenity='2.6.0'
+def versionSerenity='2.0.90'
+def versionApachePoi='5.0.0'
+def versionApacheCXF='3.4.4'
+dependencies
+        {
+            //DEPENDENCIAS DE SERENITY - TECNOLOGIAS WEB
+            implementation 'net.serenity-bdd:serenity-cucumber:1.9.51'
+            implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: "${versionSerenity}"
+            implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: "${versionSerenity}"
+            implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-webdriver', version: "${versionSerenity}"
+            implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: "${versionSerenity}"
+            implementation group: 'net.serenity-bdd', name: 'serenity-core', version: "${versionSerenity}"
+            implementation group: 'net.serenity-bdd', name: 'serenity-report-resources', version: "${versionSerenity}"
+            implementation group: 'org.mockito', name: 'mockito-core', version: '3.12.4'
+            testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.0-RC1'
+
+            //DEPENDENCIAS DE REST ASSURED - TECNOLOGIAS APIS
+            implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '2.0.52'
+            implementation group: 'io.rest-assured', name: 'rest-assured', version: '3.3.0'
+
+            //DEPENDENCIAS DE SIKULI - TECNOLOGIAS DESKTOP
+            implementation group: 'com.sikulix', name: 'sikulixapi', version: '2.0.5'
+            implementation group: 'com.github.2gis.winium', name: 'winium-elements-desktop', version: '0.2.0-1'
+
+            //DEPENDECIAS DE UTILIDADES
+            implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+            implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+            implementation group: 'org.apache.axis', name: 'axis', version: '1.4'
+            implementation group: 'javax.xml', name: 'jaxrpc-api', version: '1.1'
+            implementation group: 'com.codeborne', name: 'phantomjsdriver', version: '1.4.4'
+            implementation group: 'org.apache.poi', name: 'poi', version: "${versionApachePoi}"
+            implementation group: 'org.apache.poi', name: 'poi-ooxml', version: "${versionApachePoi}"
+            implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+            implementation group: 'javax.activation', name: 'activation', version: '1.1'
+            implementation group: 'javax.mail', name: 'mail', version: '1.4'
+            implementation group: 'com.jcraft', name: 'jsch', version: '0.1.44-1'
+            implementation group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: "${versionApacheCXF}"
+            implementation group: 'org.apache.cxf', name: 'cxf-rt-ws-security', version: "${versionApacheCXF}"
+            implementation group: 'org.apache.cxf', name: 'cxf-core', version: "${versionApacheCXF}"
+            implementation group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: "${versionApacheCXF}"
+            implementation group: 'org.json', name: 'json', version: '20210307'
+            implementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.6.0'
+            implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha5'
+            implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.0-alpha5'
+            implementation group: 'com.opencsv', name: 'opencsv', version: '5.5.2'
+            implementation group: 'net.sf.jt400', name: 'jt400', version: '10.6'
+            implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.3.0.0'
+            implementation group: 'org.assertj', name: 'assertj-core', version: '3.20.2'
+            implementation group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+            implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
+
+            jacoco {
+                toolVersion = "0.8.5"
+                reportsDir = file("$buildDir/customJacocoReportDir")
+            }
+
+            jacocoTestReport {
+                group = "Reporting"
+                reports {
+                    xml.enabled true
+                    csv.enabled false
+                    html.destination file("${buildDir}/reports/coverage")
+                    xml.destination file("${buildDir}/reports/jacoco.xml")
+                }
+            }
+
+            test {
+                useJUnit {
+                    include "**/*"
+
+                    gradle.startParameter.continueOnFailure = true
+                    testLogging.showStandardStreams = true
+                    systemProperties System.getProperties()
+                }
+
+                jacoco {
+                    destinationFile = file("$buildDir/reports/jacoco.xml")
+                    destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+                    classDumpDir = file("$buildDir/jacoco/classpathdumps")
+                }
+            }
+
+            jacocoTestCoverageVerification {
+                violationRules {
+                    rule {
+                        limit {
+                            minimum = 0.5
+                        }
+                    }
+                }
+            }
+        }

@@ -1,0 +1,28 @@
+{
+  "protocol":"https",
+  "authority":"jsonplaceholder.typicode.com",
+  "port":null,
+  "path":"users",
+  "typeParameter": "FollowedParameters",
+  "services":[
+    {
+      "name":"Post service to create a user",
+      "request":null,
+      "parameters":[{}],
+      "headers":{"Content-Type":"application/json"},
+      "body":"[{\"id\":11,\"name\":\"Krishna Rungta\",\"username\":\"Bret\",\"email\":\"Sincere@april.biz\",\"address\":{\"street\":\"Kulas Lightt\",\"suite\":\"Apt. 556\",\"city\":\"Gwenborough\",\"zipcode\":\"92998-3874\",\"geo\":{\"lat\":\"-37.3159\",\"lng\":\"81.1496\"}},\"phone\":\"1-770-736-8031 x56442\",\"website\":\"hildegard.org\",\"company\":{\"name\":\"Romaguera-Crona\",\"catchPhrase\":\"Multi-layered client-server neural-net\",\"bs\":\"harness real-time e-markets\"}}]",
+      "method":"POST",
+      "keyResponse":{
+        "id":"0.id",
+        "name":"0.name",
+        "nameUser":"0.username"
+      },
+      "expectedResponse":{
+        "id":"11",
+        "name":"Krishna Rungta",
+        "nameUser":"Bret"
+      },
+      "description":"Post Service to create a user"
+    }
+    ]
+}

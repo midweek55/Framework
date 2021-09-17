@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Escenarios que componen la prueba E2E" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-17T21:53:27" hostname="DESKTOP-2LJ72PM" time="13.561">
+  <properties/>
+  <testcase name="Yo como usuario quiero inicar un proyecto" classname="Escenarios que componen la prueba E2E" time="13.561"/>
+  <system-out><![CDATA[    ?[32mGiven ?[0m?[32mIngreso al portal contactenos?[0m                    ?[90m# E2EDefinition.portalcotactenos()?[0m
+    ?[32mThen ?[0m?[32mEscribo el correo electronico en iniciar proyecto?[0m ?[90m# E2EDefinition.portalcotactenosform1()?[0m
+    ?[32mThen ?[0m?[32mEscribo el telefono?[0m                               ?[90m# E2EDefinition.step2()?[0m
+    ?[32mThen ?[0m?[32mEscribo el Nombre Completo?[0m                        ?[90m# E2EDefinition.step3()?[0m
+    ?[32mThen ?[0m?[32mEscribo la Organizacion?[0m                           ?[90m# E2EDefinition.step4()?[0m
+    ?[32mThen ?[0m?[32mSelecciono un pais?[0m                                ?[90m# E2EDefinition.step5()?[0m
+    ?[32mThen ?[0m?[32mEscribo una ciudad?[0m                                ?[90m# E2EDefinition.step6()?[0m
+    ?[32mThen ?[0m?[32mEscribo una prueba?[0m                                ?[90m# E2EDefinition.step7()?[0m
+    ?[32mThen ?[0m?[32mSeleciono un servicio de interes?[0m                  ?[90m# E2EDefinition.step8()?[0m
+    ?[32mThen ?[0m?[32mSeleciono un producto de interes?[0m                  ?[90m# E2EDefinition.step9()?[0m
+    ?[32mThen ?[0m?[32mEscribo un comentario?[0m                             ?[90m# E2EDefinition.step10()?[0m
+]]></system-out>
+  <system-err><![CDATA[sep 17, 2021 4:53:28 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, acceptSslCerts: true, browserName: chrome, chrome.switches: --disable-extensions,--star..., goog:chromeOptions: {args: [--disable-extensions, --start-maximized, --test-type, --user-agent=New User Agent], extensions: [], prefs: {pdfjs.disabled: true, profile_default_content_settings.popups: 0}}, handlesAlerts: true, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 93.0.4577.15 (660fc11082ba57405eca2e8c49c3e1af756fbfae-refs/branch-heads/4577@{#203}) on port 40727
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+sep 17, 2021 4:53:32 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMACIÓN: Detected dialect: W3C
+[Test worker] INFO net.thucydides.core.steps.ConsoleLoggingListener - 
+        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
+  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
+ (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
+  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
+ (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
+        /_/                                                                
+
+TEST PASSED: Yo como usuario quiero inicar un proyecto
+----------------------------------------------------------------------------
+]]></system-err>
+</testsuite>

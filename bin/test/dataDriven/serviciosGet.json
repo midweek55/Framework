@@ -1,0 +1,31 @@
+{
+  "protocol":"https",
+  "authority":"reqres.in",
+  "port":null,
+  "path":"api",
+  "typeParameter": "FollowedParameters",
+  "services":[
+    {
+      "name":"get service to see a user",
+      "request":null,
+      "parameters": [
+        {"users": "users",
+          "id":"1"}
+      ],
+      "headers":null,
+      "body":null,
+      "method":"GET",
+      "keyResponse":{
+        "id":"data.id",
+        "name":"data.first_name",
+        "lastName":"data.last_name"
+      },
+      "expectedResponse":{
+        "id":"1",
+        "name":"George",
+        "lastName":"Bluth"
+      },
+      "description":"get service to see a user"
+    }
+    ]
+}

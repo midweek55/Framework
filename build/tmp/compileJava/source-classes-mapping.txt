@@ -1,0 +1,22 @@
+utils/MetodosSikuli.java
+ utils.MetodosSikuli
+steps/GoogleSteps.java
+ steps.GoogleSteps
+utils/MetodosSoap.java
+ utils.MetodosSoap
+pagesobjects/GoogleBusquedaPage.java
+ pagesobjects.GoogleBusquedaPage
+steps/SkypeSteps.java
+ steps.SkypeSteps
+utils/Json.java
+ utils.Json
+utils/MetodosRest.java
+ utils.MetodosRest
+steps/CalculadoraSteps.java
+ steps.CalculadoraSteps
+steps/FakeApiSteps.java
+ steps.FakeApiSteps
+utils/AccionesWeb.java
+ utils.AccionesWeb
+utils/MetodosWinium.java
+ utils.MetodosWinium

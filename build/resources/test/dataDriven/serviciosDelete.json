@@ -1,0 +1,26 @@
+{
+  "protocol":"http",
+  "authority":"dummy.restapiexample.com",
+  "port":null,
+  "path":"api/v1/delete",
+  "typeParameter": "FollowedParameters",
+  "services":[
+    {
+      "name":"delete service to delete a user",
+      "request":null,
+      "parameters":[{
+        "id":"15410"
+      }],
+      "headers":{},
+      "body":{},
+      "method":"DELETE",
+      "keyResponse":{
+        "status":"status"
+      },
+      "expectedResponse":{
+        "status":"failed"
+      },
+      "description":"delete service to delete a user"
+    }
+    ]
+}
